@@ -2,7 +2,6 @@ fastapi
 uvicorn[standard]
 python-multipart
 python-dotenv
-
 langchain
 langchain-core
 langchain-community
@@ -10,11 +9,8 @@ langchain-text-splitters
 langchain-chroma
 langchain-huggingface
 langchain-groq
-
 chromadb
 sentence-transformers
-torch
-
 pypdf
 pydantic
 numpy
