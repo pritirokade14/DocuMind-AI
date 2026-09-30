@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocuMind AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="brand"><span class="logo">D</span><span>DocuMind AI</span></div>
+    <p class="muted">Upload PDFs, then ask questions answered only from your documents.</p>
+
+    <label class="drop" id="drop" tabindex="0">
+      <input type="file" id="file" accept="application/pdf" multiple hidden>
+      <strong>Drop PDFs here</strong>
+      <span class="muted">or click to browse</span>
+    </label>
+    <ul class="queue" id="queue"></ul>
+    <button class="btn primary" id="build" disabled>Build knowledge base</button>
+    <p class="hint" id="hint" hidden>Reading and indexing your PDFs. The first build also downloads the embedding model, which can take a few minutes.</p>
+
+    <details class="settings">
+      <summary>Advanced settings</summary>
+      <div class="field"><label>Chunk size <output id="o-chunk">1000</output></label><input type="range" id="chunk_size" min="200" max="2000" step="100" value="1000"></div>
+      <div class="field"><label>Chunk overlap <output id="o-overlap">200</output></label><input type="range" id="chunk_overlap" min="0" max="500" step="50" value="200"></div>
+      <div class="field"><label>Chunks retrieved <output id="o-k">4</output></label><input type="range" id="k" min="1" max="10" value="4"></div>
+      <div class="field"><label>MMR diversity <output id="o-lambda">0.5</output></label><input type="range" id="lambda_mult" min="0" max="1" step="0.1" value="0.5"></div>
+      <div class="field"><label>Temperature <output id="o-temp">0.2</output></label><input type="range" id="temperature" min="0" max="1" step="0.1" value="0.2"></div>
+      <div class="field"><label>Memory (past turns) <output id="o-mem">3</output></label><input type="range" id="memory" min="0" max="10" value="3"></div>
+      <div class="field"><label>Model</label>
+        <select id="model"><option>openai/gpt-oss-20b</option><option>openai/gpt-oss-120b</option><option>llama-3.3-70b-versatile</option><option>llama-3.1-8b-instant</option></select></div>
+    </details>
+
+    <div class="status" id="status"><i class="dot"></i><span>No knowledge base yet</span></div>
+    <div class="chips" id="chips"></div>
+    <div class="row">
+      <button class="btn" id="clear">Clear chat</button>
+      <button class="btn danger" id="reset">Reset all</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="top"><button class="menu" id="menu" aria-label="Toggle sidebar">☰</button><span>Chat with your documents</span></header>
+    <section class="feed" id="feed" aria-live="polite">
+      <div class="empty" id="empty">
+        <h1>What's in your documents?</h1>
+        <p class="muted" id="empty-sub">Add a PDF in the sidebar to begin.</p>
+        <div class="prompts" id="prompts">
+          <button>Summarize the main ideas</button>
+          <button>List the key terms and definitions</button>
+          <button>What are the important conclusions?</button>
+        </div>
+      </div>
+    </section>
+    <form class="composer" id="form">
+      <textarea id="input" rows="1" placeholder="Ask a question about your documents…" disabled></textarea>
+      <button class="send" id="send" aria-label="Send" disabled>Send</button>
+    </form>
+    <p class="foot">Powered by LangChain, Chroma, Groq and HuggingFace</p>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
