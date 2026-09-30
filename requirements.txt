@@ -1,132 +1,20 @@
-# =====================================================
-# DocuMind AI - Advanced RAG Document Assistant
-# =====================================================
-
-# -----------------------
-# LangChain
-# -----------------------
-langchain
-langchain-core
-langchain-community
-langchain-text-splitters
-langchain-chroma
-langchain-huggingface
-langchain-groq
-
-# -----------------------
-# Vector Database
-# -----------------------
-chromadb
-
-# -----------------------
-# Embedding Models
-# -----------------------
-sentence-transformers
-transformers
-torch
-torchvision
-
-# -----------------------
-# Document Processing
-# -----------------------
-pypdf
-pymupdf
-unstructured
-python-docx
-beautifulsoup4
-lxml
-
-# -----------------------
-# OCR (Scanned PDFs)
-# -----------------------
-pytesseract
-pdf2image
-Pillow
-
-# -----------------------
-# Web Search
-# -----------------------
-duckduckgo-search
-wikipedia
-
-# -----------------------
-# Scientific Papers
-# -----------------------
-arxiv
-
-# -----------------------
-# API & HTTP
-# -----------------------
-requests
-httpx
-
-# -----------------------
-# Streamlit UI
-# -----------------------
-streamlit
-streamlit-extras
-
-# -----------------------
-# Backend API
-# -----------------------
 fastapi
 uvicorn[standard]
 python-multipart
-
-# -----------------------
-# Environment Variables
-# -----------------------
 python-dotenv
 
-# -----------------------
-# Data Processing
-# -----------------------
+langchain
+langchain-core
+langchain-chroma
+langchain-huggingface
+langchain-groq
+langchain-text-splitters
+
+chromadb
+sentence-transformers
+torch
+
+pypdf
+
 numpy
-pandas
-
-# -----------------------
-# Token Counting
-# -----------------------
-tiktoken
-
-# -----------------------
-# Validation
-# -----------------------
 pydantic
-
-# -----------------------
-# Logging
-# -----------------------
-loguru
-
-# -----------------------
-# Progress Bars
-# -----------------------
-tqdm
-
-# -----------------------
-# Voice Features
-# -----------------------
-SpeechRecognition
-gTTS
-
-# -----------------------
-# PDF Export
-# -----------------------
-reportlab
-
-# -----------------------
-# Markdown Support
-# -----------------------
-markdown
-
-# -----------------------
-# Async Support
-# -----------------------
-aiofiles
-
-# -----------------------
-# Utilities
-# -----------------------
-watchdog
-typing-extensions
