@@ -5,16 +5,16 @@ python-dotenv
 
 langchain
 langchain-core
+langchain-community
+langchain-text-splitters
 langchain-chroma
 langchain-huggingface
 langchain-groq
-langchain-text-splitters
 
 chromadb
 sentence-transformers
 torch
 
 pypdf
-
-numpy
 pydantic
+numpy
